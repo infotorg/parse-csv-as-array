@@ -1,0 +1,63 @@
+{
+  "name": "@infotorg/parse-csv-as-array",
+  "version": "1.0.0",
+  "description": "Parse CSV string as an array",
+  "type": "module",
+  "main": "dist/parse-csv-as-array.cjs",
+  "module": "dist/parse-csv-as-array.esm.js",
+  "unpkg": "dist/parse-csv-as-array.umd.js",
+  "jsdelivr": "dist/parse-csv-as-array.umd.js",
+  "exports": {
+    ".": {
+      "require": "./dist/parse-csv-as-array.cjs",
+      "import": "./dist/parse-csv-as-array.esm.js",
+      "umd": "./dist/parse-csv-as-array.umd.js"
+    }
+  },
+  "engines": {
+    "node": ">=12"
+  },
+  "scripts": {
+    "build": "rollup -c",
+    "lint": "eslint --ext .js src/ tests/",
+    "format": "prettier --write --list-different .",
+    "lintfix": "npm run format && npm run lint -- --fix",
+    "prepublish": "npm run build",
+    "prebuild": "npm run test",
+    "prepare": "husky install",
+    "pretest": "npm run lintfix",
+    "test": "jest"
+  },
+  "keywords": [
+    "CSV",
+    "convert CSV to array",
+    "parse CSV as array",
+    "convert CSV to array"
+  ],
+  "author": "Volodymyr Chumak <coder.ua@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/infotorg/parse-csv-as-array/issues"
+  },
+  "homepage": "https://github.com/infotorg/parse-csv-as-array#readme",
+  "directories": {
+    "test": "tests"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.22.5",
+    "@babel/core": "^7.22.5",
+    "@babel/eslint-parser": "^7.22.5",
+    "@babel/plugin-transform-runtime": "^7.22.5",
+    "@babel/preset-env": "^7.22.5",
+    "@rollup/plugin-babel": "^6.0.3",
+    "@rollup/plugin-terser": "^0.4.3",
+    "babel-jest": "^29.3.1",
+    "eslint": "^8.42.0",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-jest": "^27.2.1",
+    "husky": "^8.0.3",
+    "jest": "^29.3.1",
+    "prettier": "^2.8.6",
+    "rollup": "^3.25.1"
+  }
+}
